@@ -66,7 +66,7 @@ function recordSongHit(song, artist) {
 }
 
 $(document).ready(function(){
-	$("#back").attr("href", window.location.origin + "/musepanel/");
+	$("#back").attr("href", window.location.origin);
 
 	database.ref('songdb/').once('value').then(function(snapshot) {
 		var allSongs = snapshot.val();
@@ -74,9 +74,6 @@ $(document).ready(function(){
 		for (var key in allSongs){
 			initDataObjects(allSongs[key].song, allSongs[key].artist, allSongs[key].key, allSongs[key].note, allSongs[key].keyType);
 		}
-
-		// localStorage.setItem("songTable", JSON.stringify(songTable));
-		// localStorage.setItem("keyTable",  JSON.stringify(keyTable));
 
 		initPage();
 	});
@@ -245,10 +242,6 @@ function getSongPanel(song){
 	       		.append("<div class='song-artist'>" + song["artist"] + "</div>")
 	       	)
 }
-
-// function shorten(str, maxLength){
-// 	return str.length <= maxLength ? str : str.substr(0, maxLength) + "...";
-// }
 
 function getSongs(note, keyType, diff){
 	// ripple algorithm

@@ -32,7 +32,6 @@ var keyToRank = {
 var source = [];
 
 $(document).ready(function(){
-	// lowercaseAllKeys();
 	retrieveFirebaseData();
 
 	// event handlers
