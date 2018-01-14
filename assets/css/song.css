@@ -1,0 +1,268 @@
+
+/* COLORS
+
+light yellow - #fdf8ed
+green - #76C51F
+dark gray - #808080
+
+*/
+
+body {
+	font-family: 'Oswald', sans-serif;
+	background-color: #f5f5f5;
+	margin: 0 0 0 0 ;
+	letter-spacing: 0.3px;
+	min-width: 1000px;
+}
+
+/* -------- UPPER PAGE ---------- */
+
+#song-title {
+	color: black;
+    font-size: 50px;
+    font-weight: 400;
+    /*margin-left: 20px;*/
+    margin-top: 20px;
+    letter-spacing: .5px;
+    display: inline-block;
+
+    background-color: #71c118;
+    padding-left: 15px;
+    padding-right: 10px;
+    color: white;
+    z-index: 999;
+}
+
+#song-artist {
+	letter-spacing: .5px;
+	font-size: 30px;
+	color: #808080;
+	font-weight: 300;
+	display: inline-block;
+
+	background-color: #808080;
+	font-weight: 400;
+	padding-right: 10px;
+	padding-left: 15px;
+	color: white;
+}
+
+#song-key {
+    display: inline-block;
+    float: right;
+    color: white;
+    padding-left: 10px;
+    padding-right: 15px;
+    transform: translate(0, -120px);
+    font-size: 50px;
+    background-color: #76C51F;
+
+}
+
+footer {
+	position: relative;
+	bottom: 0;
+	font-size: 12px;
+	padding-bottom: 5px;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
+
+#back {
+	position: relative;
+	margin-left: 20px;
+	margin-top: 10px;
+	color: #808080;
+}
+
+iframe {
+	border: none;
+}
+
+#iframe-wrapper {
+	position: relative;
+	width: 100%;
+	background-color: black;
+	margin-top: 10px;
+}
+
+#iframe-container {
+	width: 560px;
+	height: 315px;
+	margin: 0 auto;
+}
+
+/* ------ RECOMMENDATIONS SECTION ----- */
+
+.song-wrapper {
+	width: 33%;
+	display: inline-block;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+}
+
+.song-item {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	box-shadow: 0px 2px 5px #ccc;
+	width: 90%;
+	font-family: 'Oswald', sans-serif;
+	padding-left:15px;
+	height: 58px;
+	transition: .2s ease-out;
+	background-color: white;
+	display: inline-block;
+	position: relative;
+	padding-right:15px;
+}
+
+.song-item > a {
+	text-decoration: none;
+}
+
+.song-title {
+	font-size: 1.2em;
+	line-height: 60px;
+	float: left;
+	letter-spacing: 0.5px;
+	font-weight: 400;
+	color: black !important;
+}
+
+.song-key {
+	float: right;
+	font-size: 1.2em;
+	line-height: 60px;
+	padding-right: 5px;
+	color: #76C51F;
+	font-weight: 400;
+}
+
+.song-info {
+	float: right;
+	font-size: 1em;
+	line-height: 60px !important;
+	color: #ff7f7f;
+	transform: translate(0, 1.5px);
+}
+
+.song-artist {
+	float: left;
+    line-height: 60px;
+    font-size: 1em;
+    color: #808080;
+    padding-top: 1px;
+    padding-left: 5px;
+}
+
+.song-item:hover {
+	transition: .1s ease-in;
+	background-color: #e5e5e5;
+	cursor: pointer;
+}
+
+
+#rec-section {
+	width: 100vw;
+	height: 325px;
+	position: relative;
+	padding-left: 10px;
+	min-width: 1000px;
+}
+
+/* ---------- TOOLBAR ----------- */
+
+#toolbar {
+	width: 100%;
+	padding-top: 10px;
+}
+
+
+#refresh {
+	width: 150px;
+	background-color: #76C51F;
+	line-height:45px;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 20px;
+	margin-right:10px;
+	box-shadow: 0px 2px 7px #ccc;
+	border-radius: 5px;
+	transition: .1s ease-out;
+	display: inline-block;
+	font-size: 16px;
+}
+
+#refresh:hover {
+	cursor: pointer;
+	box-shadow: none;
+	transition: .1s ease-in ;
+	background-color: #6ab11b;
+}
+
+
+#diff-select {
+	height: 45px;
+	color: white;
+	background-color: #808080;
+	font-family: 'Oswald', sans-serif;
+	box-shadow: 0px 2px 5px #ccc;
+	border: none;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 45px;
+	font-size: 16px;
+	outline:none; 
+}
+
+#diff-select:hover {
+	cursor: pointer;
+	background-color: #737373;
+}
+
+select {
+  -webkit-border-radius: 0px;
+}
+
+
+.download {
+	background-color: #808080;
+	width: 150px;
+	line-height:45px;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+	box-shadow: 0px 2px 5px #ccc;
+	transition: .1s ease-out;
+	display: inline-block;
+	position: relative;
+	border-radius: 5px;
+}
+
+#download-song {
+	font-size: 16px;
+	float: right;
+}
+
+#download-instrumental {
+	font-size: 16px;
+	padding-left: 5px;
+	padding-right: 5px;
+	right: 10px;
+	float: right;
+}
+
+.download:hover {
+	cursor: pointer;
+	box-shadow: none;
+	transition: .1s ease-in ;
+	background-color: #737373;
+}
+

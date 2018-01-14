@@ -1,0 +1,275 @@
+
+/* COLORS
+
+light yellow - #fdf8ed
+green - #76C51F
+dark gray - #808080
+
+*/
+
+/*  Autcomplete default classes */
+
+.ui-menu-item {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	box-shadow: 0px 2px 5px #888888;
+	width: 700px;
+	font-family: 'Oswald', sans-serif;
+	padding-left:20px;
+	height: 58px;
+	transition: .2s ease-out;
+	background-color: white;
+}
+
+.ui-menu-item:hover {
+	transition: .1s ease-in;
+	background-color: #e5e5e5;
+	cursor: pointer;
+}
+
+.ui-helper-hidden-accessible {
+	display: none;
+}
+
+.ui-menu {
+	top: 0px !important;
+}
+
+/* Custom Dropdown Styling */
+
+.song-title {
+	font-size: 25px;
+	line-height: 60px;
+	float: left;
+	letter-spacing: 0.5px;
+	font-weight: 400;
+}
+
+.song-key {
+	float: right;
+	font-size: 20px;
+	line-height: 60px;
+	padding-right: 15px;
+	color: #76C51F;
+	font-weight: 400;
+}
+
+.song-artist {
+	float: left;
+    line-height: 60px;
+    font-size: 20px;
+    color: #808080;
+    padding-top: 2px;
+    padding-left: 5px;
+}
+
+li {
+	list-style: none;
+}
+
+ul {
+	padding-left: 0px;
+}
+
+/* Search Bar */
+
+#songSearch {
+	width: 700px;
+	height: 60px;
+	box-shadow: 0px 2px 5px #888888;
+	margin-top: 75px;
+	border: none;
+	padding-left: 20px;
+	font-size: 30px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+}
+
+#songSearch:focus {
+	outline: none;
+}
+
+#songSearch::placeholder {
+	color: #bfbfbf;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+
+}
+
+/* General page */
+
+body {
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'Oswald', sans-serif;
+	background-color: #f5f5f5;
+}
+
+#product-title {
+	font-size: 60px;
+	font-weight: 400;
+	margin-top: 100px;
+	color: #76C51F;
+	letter-spacing: 1px;
+}
+
+#product-caption {
+	font-size: 20px;
+	color: #888888;
+}
+
+#addsong-caption {
+	padding-top: 5px;
+	color: #888888;
+}
+
+#addsong-caption > a {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* Add Song Modal */
+
+.modal-dialog {
+	margin-top: 90px;
+}
+
+#song-input, #artist-input {
+	height: 35px;
+	line-height: 35px;
+	border: none;
+	border-bottom: 2px solid #76C51F;
+	font-weight: 300;
+	letter-spacing: .3px;
+	padding-left: 5px;
+	outline:0 ;
+	font-size: 20px;
+}
+
+#song-input {
+	width: 200px;
+}
+
+#artist-input {
+	width: 200px;
+}
+
+#key-select, #interval-select {
+	height: 35px;
+	background-color: white;
+}
+
+#add-song-button {
+	background-color: #76C51F;
+	height: 35px;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+	box-shadow: 0px 2px 7px #ccc;
+	border-radius: 5px;
+	transition: .1s ease-out;
+	display: inline-block;
+	font-size: 16px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+#add-song-button:hover {
+	cursor: pointer;
+	box-shadow: none;
+	transition: .1s ease-in ;
+	background-color: #6ab11b;
+}
+
+#cancel-modal {
+	color: white;
+	height: 35px;
+	padding-right: 15px;
+	padding-left: 15px;
+	display: inline-block;
+	font-size: 16px;
+	transition: .1s ease-out;
+	border-radius: 5px;
+	box-shadow: 0px 2px 7px #ccc;
+	background-color: #D8D8D8;
+	outline: 0;
+}
+
+#cancel-modal:hover {
+	cursor: pointer;
+	box-shadow: none;
+	transition: .1s ease-in ;
+	background-color: #cecece;
+}
+
+
+#song-input::-webkit-input-placeholder {
+	color: #808080 !important;
+}
+ 
+#song-input:-moz-placeholder { /* Firefox 18- */
+	color: #808080 !important;  
+}
+ 
+#song-input::-moz-placeholder {  /* Firefox 19+ */
+	color: #808080 !important;  
+}
+ 
+#song-input:-ms-input-placeholder {  
+	color: #808080 !important;  
+}
+
+.modal-footer {
+	border-top: none;
+}
+
+.modal-header {
+	border-bottom: none;
+}
+
+#addSongModalTitle {
+	font-size: 25px;
+}
+
+.modal-content  {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+}
+
+.close {
+	font-size: 40px;
+	outline: 0;
+}
+
+#missing-fields {
+	display: inline-block;
+    float: left;
+    margin-left: 30px;
+    line-height: 35px;
+    color: red;
+    display: none;
+}
+
+/* Footer */
+
+footer {
+	position: absolute;
+	bottom: 0;
+	font-size: 12px;
+	padding-bottom: 5px;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+}
+
+#mp-logo {
+	transform: translate(-10px, -15px);
+}
+
+#empty-message {
+	margin-top: 20px;
+    font-size: 20px;
+    color: #76C51F;
+    display: none;
+}

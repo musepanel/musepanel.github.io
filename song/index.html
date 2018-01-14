@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>MusePanel - Song</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400" rel="stylesheet">
+		<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+		<script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js" ></script>
+
+		<!-- Custom files -->
+		<script src="../assets/js/utils.js" ></script>
+		<script src="../assets/js/song.js" ></script>
+		<link href="../assets/css/song.css" rel="stylesheet">
+	</head>
+	<body>
+		<a id="back"> back to search </a>
+		<br>
+		<div id="song-title"></div>
+		<br>
+		<div id="song-artist"></div>
+		<br>
+		<div id="song-key"></div>
+		<div id="iframe-wrapper">
+			<div id="iframe-container">
+				<iframe id="songVid" width="560" height="315" src=""></iframe>
+			</div>
+		</div>
+
+		<div id="toolbar">
+			<div id="refresh">More Recommendations</div>
+			<select id="diff-select">
+			  <option value="0.5"> +/- 1/2 step</option>
+			  <option value="1"> +/- 1 step</option>
+			  <option value="1.5">  +/- 1 1/2 steps</option>
+			  <option value="2"> +/- 2 steps</option>
+			</select>
+			<div class="download" id="download-instrumental">Download Instrumental</div>
+			<div class="download" id="download-song">Download Song</div>
+		</div>
+
+		<div id="rec-section"></div>
+	</body>
+	<footer>
+		<div> Created by <a target="_blank" href="http://sridattbhamidipati.me"> Sridatt Bhamidipati </a> &copy; 2017 </div>
+	</footer>
+</html>
