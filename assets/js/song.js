@@ -232,7 +232,7 @@ function closerHigher(recSongRank, currSongRank){
 }
 
 function getSongPanel(song){
-	var href = "../song?title=" + song["title"] + "&artist=" + song["artist"];
+	var href = "../song?title=" + escape(song["title"]) + "&artist=" + escape(song["artist"]);
 	var info = findKeyDifference(song["key"], song["keyType"]);
 	return $("<a href='" + href + "' class='song-wrapper'></a>")
 			.append($("<div class='song-item'></div>")
