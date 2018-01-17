@@ -17,12 +17,14 @@ body {
 
 /* -------- UPPER PAGE ---------- */
 
+#title-key-bar {
+	margin-top: 10px;
+}
+
 #song-title {
 	color: black;
     font-size: 50px;
     font-weight: 400;
-    /*margin-left: 20px;*/
-    margin-top: 20px;
     letter-spacing: .5px;
     display: inline-block;
 
@@ -31,6 +33,16 @@ body {
     padding-right: 10px;
     color: white;
     z-index: 999;
+}
+
+#song-key {
+    display: inline-block;
+    float: right;
+    color: white;
+    padding-left: 10px;
+    padding-right: 15px;
+    font-size: 50px;
+    background-color: #76C51F;
 }
 
 #song-artist {
@@ -47,23 +59,26 @@ body {
 	color: white;
 }
 
-#song-key {
-    display: inline-block;
-    float: right;
-    color: white;
-    padding-left: 10px;
-    padding-right: 15px;
-    transform: translate(0, -120px);
-    font-size: 50px;
-    background-color: #76C51F;
+#request-change {
+	display: inline-block;
+	float: right;
+	margin-right: 15px;
+	font-size: 12px;
+	margin-top: -17px;
+}
 
+#website-footer {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 12px;
 }
 
 footer {
 	position: relative;
 	bottom: 0;
 	font-size: 12px;
-	padding-bottom: 5px;
+	padding-bottom: 10px;
 	margin: 0 auto;
 	text-align: center;
 	width: 100%;
@@ -72,7 +87,6 @@ footer {
 #back {
 	position: relative;
 	margin-left: 20px;
-	margin-top: 10px;
 	color: #808080;
 }
 
@@ -96,7 +110,7 @@ iframe {
 /* ------ RECOMMENDATIONS SECTION ----- */
 
 .song-wrapper {
-	width: 33%;
+	width: 33.33%;
 	display: inline-block;
 	margin: 0 auto;
 	text-align: center;
@@ -107,7 +121,7 @@ iframe {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	box-shadow: 0px 2px 5px #ccc;
-	width: 90%;
+	width: 95%;
 	font-family: 'Oswald', sans-serif;
 	padding-left:15px;
 	height: 58px;
@@ -168,7 +182,6 @@ iframe {
 	width: 100vw;
 	height: 325px;
 	position: relative;
-	padding-left: 10px;
 	min-width: 1000px;
 }
 
@@ -181,7 +194,6 @@ iframe {
 
 
 #refresh {
-	width: 150px;
 	background-color: #76C51F;
 	line-height:45px;
 	margin: 0 auto;
@@ -266,3 +278,134 @@ select {
 	background-color: #737373;
 }
 
+#request-change > a {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+/* -------- REQUEST CHANGE ------ */
+
+.modal-dialog {
+	margin-top: 90px;
+}
+
+#requestChangeModalTitle {
+	font-size: 25px;
+}
+
+#request-change-button {
+	background-color: #76C51F;
+	height: 35px;
+	margin: 0 auto;
+	text-align: center;
+	color: white;
+	box-shadow: 0px 2px 7px #ccc;
+	border-radius: 5px;
+	transition: .1s ease-out;
+	display: inline-block;
+	font-size: 16px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+#request-change-button:hover {
+	cursor: pointer;
+	box-shadow: none;
+	transition: .1s ease-in ;
+	background-color: #6ab11b;
+}
+
+#song-input, #artist-input {
+	height: 35px;
+	line-height: 35px;
+	border: none;
+	border-bottom: 2px solid #76C51F;
+	font-weight: 300;
+	letter-spacing: .3px;
+	padding-left: 5px;
+	outline:0 ;
+	font-size: 20px;
+}
+
+#song-input {
+	width: 200px;
+}
+
+#artist-input {
+	width: 200px;
+}
+
+#key-select, #interval-select {
+	height: 35px;
+	background-color: white;
+}
+
+#cancel-modal {
+	color: white;
+	height: 35px;
+	padding-right: 15px;
+	padding-left: 15px;
+	display: inline-block;
+	font-size: 16px;
+	transition: .1s ease-out;
+	border-radius: 5px;
+	box-shadow: 0px 2px 7px #ccc;
+	background-color: #D8D8D8;
+	outline: 0;
+}
+
+#cancel-modal:hover {
+	cursor: pointer;
+	box-shadow: none;
+	transition: .1s ease-in ;
+	background-color: #cecece;
+}
+
+
+#song-input::-webkit-input-placeholder {
+	color: #808080 !important;
+}
+ 
+#song-input:-moz-placeholder { /* Firefox 18- */
+	color: #808080 !important;  
+}
+ 
+#song-input::-moz-placeholder {  /* Firefox 19+ */
+	color: #808080 !important;  
+}
+ 
+#song-input:-ms-input-placeholder {  
+	color: #808080 !important;  
+}
+
+.modal-footer {
+	border-top: none;
+}
+
+.modal-header {
+	border-bottom: none;
+}
+
+#addSongModalTitle {
+	font-size: 25px;
+}
+
+.modal-content  {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 0px !important; 
+}
+
+.close {
+	font-size: 40px;
+	outline: 0;
+}
+
+#missing-fields {
+	display: inline-block;
+    float: left;
+    margin-left: 30px;
+    line-height: 35px;
+    color: red;
+    display: none;
+}

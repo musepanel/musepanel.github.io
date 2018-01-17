@@ -93,6 +93,50 @@ $(document).ready(function(){
 		setTimeout(initPage, 100);
 	})
 
+	$("#request-change > a").on('click', function(){
+		$("#song-input").val(songObj["title"]);
+		$("#artist-input").val(songObj["artist"]);
+		$("#key-select").val(songObj["note"]);
+		$("#interval-select").val(songObj["keyType"]);
+	});
+
+	$("#request-change-button").click(function(){
+
+		var song = $("#song-input").val();
+		var artist = $("#artist-input").val();
+		
+		if (song.length == 0 || artist.length == 0){
+			$(".modal").effect("shake");
+			$("#missing-fields").show();
+		} else {
+			$("#cancel-modal").hide();
+			$("#missing-fields").hide();
+			$("#add-song-button").text("Sending Request...");
+
+			var newRequestRef = database.ref('request/').push();
+			newRequestRef.set({
+			  old: songObj,
+			  new: {
+			  	song: $("#song-input").val(),
+			  	artist: $("#artist-input").val(),
+			  	note: $("#key-select").val(),
+			  	keyType: $("#interval-select").val(),
+			  	key: $("#key-select").val() + " " + $("#interval-select").val(),
+			  	rank: keyToRank[$("#key-select").val()]
+			  }
+			}, function(error){
+				if (error){
+					alert(error);
+				} else {
+					$(".modal-body").hide(400);
+					$(".modal-footer").hide(400);
+
+					$("#requestChangeModalTitle").html('Thank you for helping improve MusePanel!');
+				}
+			});
+		}
+	})
+
 });
 
 function initDataObjects(song, artist, key, note, keyType){
@@ -132,7 +176,7 @@ function openLink(mp3Type){
 function initPage(){
 	if (!pageLoaded){
 		songObj = getSongObj(); // get from param
-		console.log(songObj);
+
 		recordSongHit(songObj["title"], songObj["artist"]); // record view 
 
 		document.title = "MusePanel - " + songObj["title"];
@@ -177,9 +221,10 @@ function shuffle(array) {
 }
 
 function embedYoutubeVid(songObj){
-	var query = songObj["title"] + "+" + songObj["artist"]; 
+	var query = songObj["title"] + " " + songObj["artist"] + " full audio song"; 
+	console.log(query);
 	$.getJSON("https://www.googleapis.com/youtube/v3/search?part=Id&q=" + query.replace(" ", "+") + "&maxResults=1&key=AIzaSyArHKHtQbB9JCXhkm0DkyX1H-oF4Mfv-lM", function(data) {
-		var link = "https://www.youtube.com/embed/" + data["items"][0]["id"]["videoId"];
+		var link = "https://www.youtube.com/embed/" + data["items"][0]["id"]["videoId"] + "?autoplay=1";
 		$("#songVid").attr("src", link);
 	});
 }
@@ -283,8 +328,6 @@ function getSongObj(){
 	var search = location.search.substring(1);
 	var params = search?JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}',
 	                 function(key, value) { return key===""?value:decodeURIComponent(value) }):{}
-	console.log(utils.hashSong(params["title"], params["artist"]));
-	console.log(songTable);
 	return songTable[utils.hashSong(params["title"], params["artist"])];
 }
 

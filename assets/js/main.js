@@ -104,7 +104,6 @@ function retrieveFirebaseData(){
 		var allSongs = snapshot.val();
 
 		for (var key in allSongs){
-			console.log(allSongs[key].song + " by " + allSongs[key].artist + ": " + allSongs[key].key);
 			initDataObjects(allSongs[key].song, allSongs[key].artist, allSongs[key].key, allSongs[key].note, allSongs[key].keyType);
 		}
 

@@ -20,22 +20,27 @@
 		<script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
 		<script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js" ></script>
 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 		<!-- Custom files -->
 		<script src="../assets/js/utils.js" ></script>
 		<script src="../assets/js/song.js" ></script>
 		<link href="../assets/css/song.css" rel="stylesheet">
 	</head>
 	<body>
-		<a id="back"> back to search </a>
+		<a id="back">back to search</a>
 		<br>
-		<div id="song-title"></div>
-		<br>
-		<div id="song-artist"></div>
-		<br>
-		<div id="song-key"></div>
+		<div id="title-key-bar">
+			<div id="song-title"></div>
+			<div id="song-key"></div>
+		</div>
+		<div id="artist-request-bar">
+			<div id="song-artist"></div>
+		</div>
 		<div id="iframe-wrapper">
 			<div id="iframe-container">
-				<iframe id="songVid" width="560" height="315" src=""></iframe>
+				<iframe id="songVid" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
 
@@ -52,8 +57,53 @@
 		</div>
 
 		<div id="rec-section"></div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="requestChangeModal" tabindex="-1" role="dialog" aria-labelledby="requestChangeModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		      	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		      	  <span aria-hidden="true">&times;</span>
+		      	</button>
+		        <h5 class="modal-title" id="requestChangeModalTitle">Request a Change</h5>
+		      </div>
+		      <div class="modal-body">
+		      	<input id="song-input" type="" name="" placeholder="Song" type="search">
+		      	<input id="artist-input" type="" name="" placeholder="Artist" type="search">
+		      	<select id="key-select">
+		      		<option>C</option>
+		      		<option>Db</option>
+		      		<option>D</option>
+		      		<option>Eb</option>
+		      		<option>E</option>
+		      		<option>F</option>
+		      		<option>Gb</option>
+		      		<option>G</option>
+		      		<option>Ab</option>
+		      		<option>A</option>
+		      		<option>Bb</option>
+		      		<option>B</option>
+		      	</select>
+		      	<select id="interval-select">
+		      		<option>Major</option>
+		      		<option>minor</option>
+		      	</select>
+		      </div>
+		      <div class="modal-footer">
+		      	<div id="missing-fields">Please fill in both song and artist! </div>
+		        <button type="button" id="cancel-modal" data-dismiss="modal">Cancel</button>
+		        <button type="button" id="request-change-button">Request a Change</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 	</body>
 	<footer>
-		<div> Created by <a target="_blank" href="http://sridattbhamidipati.me"> Sridatt Bhamidipati </a> &copy; 2017 </div>
+		<div id="website-footer"> Created by <a target="_blank" href="http://sridattbhamidipati.me"> Sridatt Bhamidipati </a> &copy; 2017 </div>
+		<div id="request-change">See a mistake? 
+			<a data-toggle="modal" data-target="#requestChangeModal">Request change</a> | Have feedback? 
+			<a href="mailto:musepanelapp@gmail.com?subject=MusePanel Feedback">Email Me</a>
+		</div>
 	</footer>
 </html>
