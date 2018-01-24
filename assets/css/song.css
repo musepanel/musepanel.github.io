@@ -285,6 +285,11 @@ select {
 
 /* -------- REQUEST CHANGE ------ */
 
+.modal-body, .modal-header {
+	margin: 0 auto;
+	text-align: center;
+}
+
 .modal-dialog {
 	margin-top: 90px;
 }

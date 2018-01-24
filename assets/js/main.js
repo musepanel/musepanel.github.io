@@ -108,6 +108,23 @@ function retrieveFirebaseData(){
 		}
 
 		initAutocomplete(source);
+
+		$(".spinner").hide();
+
+		setTimeout(function() {
+			$("#addsong-caption").show();
+			$( "#songSearch" ).animate({
+				opacity: 1,
+			    'margin-top': '75px'
+			  }, 500, function() {
+			    // Animation complete.
+			    $( "#addsong-caption" ).animate({
+			    	opacity: 1,
+			      }, 500, function() {
+			        // Animation complete.
+			      });
+			  });
+	    }, 200);
 	});
 }
 
@@ -165,7 +182,7 @@ function initAutocomplete(source){
         },    
         select: function(event, ui) {
         	event.preventDefault();
-        	window.location.href += "song?title=" + ui.item.value + "&artist=" + ui.item.artist;
+        	window.location.href += "song?title=" + encodeURIComponent(ui.item.value) + "&artist=" + encodeURIComponent(ui.item.artist);
         },
         response: function(event, ui) {
         	if (ui.content.length === 0) {

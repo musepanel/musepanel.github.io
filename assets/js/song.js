@@ -131,7 +131,7 @@ $(document).ready(function(){
 					$(".modal-body").hide(400);
 					$(".modal-footer").hide(400);
 
-					$("#requestChangeModalTitle").html('Thank you for helping improve MusePanel!');
+					$("#requestChangeModalTitle").html('Request received! Thanks for helping improve MusePanel!');
 				}
 			});
 		}
@@ -222,7 +222,6 @@ function shuffle(array) {
 
 function embedYoutubeVid(songObj){
 	var query = songObj["title"] + " " + songObj["artist"] + " full audio song"; 
-	console.log(query);
 	$.getJSON("https://www.googleapis.com/youtube/v3/search?part=Id&q=" + query.replace(" ", "+") + "&maxResults=1&key=AIzaSyArHKHtQbB9JCXhkm0DkyX1H-oF4Mfv-lM", function(data) {
 		var link = "https://www.youtube.com/embed/" + data["items"][0]["id"]["videoId"] + "?autoplay=1";
 		$("#songVid").attr("src", link);
