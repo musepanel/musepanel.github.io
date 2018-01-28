@@ -90,7 +90,7 @@ $(document).ready(function(){
 
 	$("#diff-select").on('change', function(){
 		$("#rec-section").empty();
-		setTimeout(initPage, 100);
+		setTimeout(populateRecSection(getSongObj()), 100);
 	})
 
 	$("#request-change > a").on('click', function(){
@@ -187,6 +187,10 @@ function initPage(){
 		embedYoutubeVid(songObj);
 	}
 
+	populateRecSection(songObj);
+}
+
+function populateRecSection(songObj){
 	var rank = songObj["rank"];
 	var keyType = songObj["keyType"];
 	var songs = getSongs(songObj["note"], keyType, $("#diff-select").val());
@@ -200,6 +204,7 @@ function initPage(){
 	songs = shuffle(songs);
 	fillRecommendations(songs);
 }
+
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
