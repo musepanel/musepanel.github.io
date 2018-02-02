@@ -88,6 +88,7 @@ footer {
 	position: relative;
 	margin-left: 20px;
 	color: #808080;
+	text-decoration: underline;
 }
 
 iframe {
@@ -118,6 +119,32 @@ iframe {
 #question-mark:hover {
 	cursor: pointer;
 }
+
+/* tooltip */
+
+#title-key-bar .tooltip {
+	font-family: 'Oswald', sans-serif;
+	margin-top: 25px;
+}
+
+#title-key-bar .tooltip.in {
+	opacity:1 !important;
+}
+
+
+#title-key-bar .tooltip .tooltip-inner {
+    background-color: white;
+    font-size: 16px;
+    color: #808080;
+    text-align: justify;
+}
+
+#title-key-bar .tooltip.left .tooltip-arrow {
+	border-left-color: white;
+	text-align: justify;
+	margin-top: -30px;
+}
+
 
 /* ------ RECOMMENDATIONS SECTION ----- */
 

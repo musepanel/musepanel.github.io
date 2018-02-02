@@ -76,6 +76,10 @@ $(document).ready(function(){
 		}
 
 		initPage();
+
+		$(function () {
+		  $('[data-toggle="tooltip"]').tooltip()
+		})
 	});
 
 	// event handlers
