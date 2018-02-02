@@ -1,7 +1,11 @@
 var utils = {};
 
 utils.shorten = function(str, maxLength){
-	return str.length <= maxLength ? str : str.substr(0, maxLength) + "...";
+	if (str.length <= maxLength)
+		return str;
+	
+	var resultStr = str.substr(0, maxLength);
+	return (resultStr[resultStr.length - 1] == " " ? resultStr.slice(0, -1) : resultStr) + "...";
 }
 
 utils.properCaps = function(song, inp){
@@ -11,7 +15,3 @@ utils.properCaps = function(song, inp){
 utils.hashSong = function(song, artist){
 	return (song + "-" + artist).split(' ').join('').toLowerCase();
 }
-
-// utils.spellKey = function(key){
-// 	return key.slice(0, -1) + (key[key.length-1] == key[key.length-1].toLowerCase() ? " minor" : " Major");
-// }

@@ -285,11 +285,18 @@ function getSongPanel(song){
 	var info = findKeyDifference(song["key"], song["keyType"]);
 	return $("<a href='" + href + "' class='song-wrapper'></a>")
 			.append($("<div class='song-item'></div>")
-	       		.append("<div class='song-title'>" + utils.shorten(song["title"], 20) + "</div>")
+	       		.append("<div class='song-title'>" + shortenSongTitle(song) + "</div>")
 	       		.append("<div class='song-info'>" + info + "</div>")
 	       		.append("<div class='song-key'>" + song["key"] + "</div>")
 	       		.append("<div class='song-artist'>" + song["artist"] + "</div>")
 	       	)
+}
+
+function shortenSongTitle(song){
+	if (song["title"].length + song["artist"].length > 35)
+		return utils.shorten(song["title"], song["title"].length - song["artist"].length);
+
+	return song["title"];
 }
 
 function getSongs(note, keyType, diff){

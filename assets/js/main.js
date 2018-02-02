@@ -104,9 +104,12 @@ function retrieveFirebaseData(){
 		var allSongs = snapshot.val();
 
 		for (var key in allSongs){
+			if (key.indexOf('je') !== -1){
+				console.log(key);
+			}
 			initDataObjects(allSongs[key].song, allSongs[key].artist, allSongs[key].key, allSongs[key].note, allSongs[key].keyType);
 		}
-
+		// console.log(source);
 		initAutocomplete(source);
 
 		$(".spinner").hide();

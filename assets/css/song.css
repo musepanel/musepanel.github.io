@@ -40,7 +40,7 @@ body {
     float: right;
     color: white;
     padding-left: 10px;
-    padding-right: 15px;
+    padding-right: 25px;
     font-size: 50px;
     background-color: #76C51F;
 }
@@ -105,6 +105,18 @@ iframe {
 	width: 560px;
 	height: 315px;
 	margin: 0 auto;
+}
+
+#question-mark {
+	font-size: 20px;
+	position: absolute;
+	color: white;
+	top: 35px;
+	right: 8px;
+}
+
+#question-mark:hover {
+	cursor: pointer;
 }
 
 /* ------ RECOMMENDATIONS SECTION ----- */
